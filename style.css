@@ -3,8 +3,11 @@
 
 body {
     font-family: 'Cormorant Garamond', serif;
-    background: url('logo-background.png') no-repeat center center fixed;
+    background-color: #0a0a0a;
+    background-image: url('logo-background.png');
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -31,6 +34,30 @@ h1 {
     color: #2F5E33;
     margin-bottom: 30px;
     font-size: 1.2em;
+}
+
+.services {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.services h2 {
+  color: #DAA520;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  margin: 8px 0;
+  font-size: 1.1em;
 }
 
 form input, form select, form button {
