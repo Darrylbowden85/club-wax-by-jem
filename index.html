@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +10,31 @@
     <h1>Club Wax by JEM</h1>
     <p class="tagline">Smooth. Confident. You.</p>
 
-    <form id="bookingForm" action="https://formspree.io/f/mvgardyz" method="POST">
+    <div class="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>Full Body Wax</strong> – $120</li>
+        <li><strong>Bikini Wax</strong> – $45</li>
+        <li><strong>Leg Wax</strong> – $60</li>
+        <li><strong>Facial Wax</strong> – $30</li>
+        <li><strong>Underarm Wax</strong> – $25</li>
+        <li><strong>Brazilian Wax</strong> – $70</li>
+      </ul>
+    </div>
+
+    <form id="bookingForm" action="https://formspree.io/f/yourformid" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <select name="service" required>
         <option value="" disabled selected>Select a service</option>
-        <option value="Full Body Wax">Full Body Wax</option>
-        <option value="Bikini Wax">Bikini Wax</option>
-        <option value="Leg Wax">Leg Wax</option>
-        <option value="Facial Wax">Facial Wax</option>
+        <option value="Full Body Wax - $120">Full Body Wax - $120</option>
+        <option value="Bikini Wax - $45">Bikini Wax - $45</option>
+        <option value="Leg Wax - $60">Leg Wax - $60</option>
+        <option value="Facial Wax - $30">Facial Wax - $30</option>
+        <option value="Underarm Wax - $25">Underarm Wax - $25</option>
+        <option value="Brazilian Wax - $70">Brazilian Wax - $70</option>
       </select>
       <input type="date" name="date" required />
       <input type="time" name="time" required step="900" />
- 
       <button type="submit">Book Now</button>
     </form>
 
@@ -57,3 +69,5 @@
   </script>
 </body>
 </html>
+
+      
