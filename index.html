@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Wax by JEM - Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Club Wax by JEM</h1>
+    <p class="tagline">Smooth. Confident. You.</p>
+
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <select name="service" required>
+        <option value="" disabled selected>Select a service</option>
+        <option value="Full Body Wax">Full Body Wax</option>
+        <option value="Bikini Wax">Bikini Wax</option>
+        <option value="Leg Wax">Leg Wax</option>
+        <option value="Facial Wax">Facial Wax</option>
+      </select>
+      <input type="date" name="date" required />
+      <input type="time" name="time" required />
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+</body>
+</html>
