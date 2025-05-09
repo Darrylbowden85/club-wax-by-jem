@@ -4,38 +4,63 @@
   <meta charset="UTF-8" />
   <title>Club Wax by JEM - Booking</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1>Club Wax by JEM</h1>
-    <p class="tagline">Smooth. Confident. You.</p>
+    <p class="tagline">Glow Up, Glam Up</p>
 
     <div class="services">
       <h2>Our Services</h2>
-      <ul>
-        <li><strong>Full Body Wax</strong> – $120</li>
-        <li><strong>Bikini Wax</strong> – $45</li>
-        <li><strong>Leg Wax</strong> – $60</li>
-        <li><strong>Facial Wax</strong> – $30</li>
-        <li><strong>Underarm Wax</strong> – $25</li>
-        <li><strong>Brazilian Wax</strong> – $70</li>
-      </ul>
+      <div class="service-card">
+        <h3>Full Body Wax - $120</h3>
+        <button onclick="bookService('Full Body Wax - $120')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Bikini Wax - $45</h3>
+        <button onclick="bookService('Bikini Wax - $45')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Brazilian Wax - $70</h3>
+        <button onclick="bookService('Brazilian Wax - $70')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Leg Wax - $60</h3>
+        <button onclick="bookService('Leg Wax - $60')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Underarm Wax - $25</h3>
+        <button onclick="bookService('Underarm Wax - $25')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Facial Wax - $30</h3>
+        <button onclick="bookService('Facial Wax - $30')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Forearm Wax - $35</h3>
+        <button onclick="bookService('Forearm Wax - $35')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Nipple Wax - $15</h3>
+        <button onclick="bookService('Nipple Wax - $15')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Nose Wax - $20</h3>
+        <button onclick="bookService('Nose Wax - $20')">Book Now</button>
+      </div>
+      <div class="service-card">
+        <h3>Eyebrow Wax - $18</h3>
+        <button onclick="bookService('Eyebrow Wax - $18')">Book Now</button>
+      </div>
     </div>
 
-    <form id="bookingForm" action="https://formspree.io/f/mvgardyz" method="POST">
-      <input type="text" name="Name" placeholder="Your Name" required />
-      <select name="service" required>
-        <option value="" disabled selected>Select a service</option>
-        <option value="Full Body Wax - $120">Full Body Wax - $120</option>
-        <option value="Bikini Wax - $45">Bikini Wax - $45</option>
-        <option value="Leg Wax - $60">Leg Wax - $60</option>
-        <option value="Facial Wax - $30">Facial Wax - $30</option>
-        <option value="Underarm Wax - $25">Underarm Wax - $25</option>
-        <option value="Brazilian Wax - $70">Brazilian Wax - $70</option>
-      </select>
+    <form id="bookingForm" action="https://formspree.io/f/yourformid" method="POST">
+      <input type="hidden" name="service" id="selectedService" />
+      <input type="text" name="name" placeholder="Your Name" required />
       <input type="date" name="date" required />
-      <input type="time" name="time" required step="900">
-      <button type="submit">Book Now</button>
+      <input type="time" name="time" required step="900" />
+      <button type="submit">Confirm Appointment</button>
     </form>
 
     <div id="confirmation" class="confirmation hidden">
@@ -44,6 +69,11 @@
   </div>
 
   <script>
+    function bookService(serviceName) {
+      document.getElementById('selectedService').value = serviceName;
+      document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
     const form = document.getElementById('bookingForm');
     const confirmation = document.getElementById('confirmation');
 
@@ -70,4 +100,3 @@
 </body>
 </html>
 
-      
