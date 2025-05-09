@@ -6,10 +6,322 @@
   <title>Club Wax by JEM - Booking</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <!-- Additional inline styles omitted for brevity -->
+  <style>
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+    .slide-group {
+      margin-bottom: 40px;
+    }
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+    .mySlides img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: gold;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .glow-box {
+      border: 2px solid gold;
+      box-shadow: 0 0 20px gold;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .service-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .service-card h3, .service-card p, .tagline, h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
+    }
+  .intro {
+      background: url('images/clubwax-intro.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 60px 20px;
+      color: white;
+      text-shadow: 0 0 10px black;
+      margin-bottom: 30px;
+    }
+    .intro .glow-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      max-width: 700px;
+      margin: auto;
+    }
+  body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,215,0,0.1), rgba(57,255,20,0.1));
+      animation: shimmer 5s infinite;
+      z-index: -1;
+    }
+
+    @keyframes shimmer {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+.sticky-nav {
+      position: sticky;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 0 10px gold;
+    }
+    .sticky-nav nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .sticky-nav nav ul li {
+      margin: 0 15px;
+    }
+    .sticky-nav nav ul li a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Great Vibes', cursive;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    .sticky-nav nav ul li a:hover {
+      color: #39FF14;
+    }
+html {
+  scroll-behavior: smooth;
+}
+</style>
 </head>
 <body>
-  <!-- Full HTML structure omitted for brevity, already provided in canvas -->
-  <!-- Assume complete HTML is written here -->
+  <header class="sticky-nav">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#bookingForm">Book</a></li>
+        <li><a href="#confirmation">Confirmation</a></li>
+        <li><a href="#review">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="intro">
+    <div class="glow-box">
+      <h2>Welcome to Club Wax by JEM</h2>
+      <p>At Club Wax, we believe beauty starts with confidence. Step into a serene, luxurious atmosphere where smooth skin meets expert care. From brows to bikini and everything in between, our services are designed to leave you glowing and glam.</p>
+      <p>Let your inner radiance shine—Book today and experience the art of waxing in the most elegant way.</p>
+    </div>
+  </section>
+  <div class="container">
+    <h1>Club Wax by JEM</h1>
+    <p class="tagline">Glow Up, Glam Up</p>
+
+    <h2>Our Services</h2>
+
+    <div class="glow-box slide-group">
+  <h3>Leg Waxing</h3>
+  <div class="slideshow-container" id="legSlideshow">
+    <div class="mySlides">
+      <div class="service-card">
+        <img src="images/fullleg.jpg" alt="Full Leg Waxing" />
+        <h3>Full Leg Waxing - $50</h3>
+        <p>Complete leg waxing for a smooth, hair-free look from the thighs to the feet.</p>
+        <button onclick="bookService('Full Leg Waxing - $50')">Book Now</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <div class="service-card">
+        <img src="images/halfleg.jpg" alt="Half Leg Waxing" />
+        <h3>Half Leg Waxing - $30</h3>
+        <p>Waxing from the knee to the foot or from the thigh to the knee.</p>
+        <button onclick="bookService('Half Leg Waxing - $30')">Book Now</button>
+      </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1, 'legSlideshow')">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 'legSlideshow')">&#10095;</a>
+  </div>
+</div>
+
+<div class="glow-box slide-group">
+  <h3>Bikini Waxing</h3>
+  <div class="slideshow-container" id="bikiniSlideshow">
+    <div class="mySlides">
+      <div class="service-card">
+        <img src="images/bikiniLine.jpg" alt="Bikini Line Waxing" />
+        <h3>Bikini Line Waxing - $25</h3>
+        <p>Waxing along the natural bikini line for a clean and polished look.</p>
+        <button onclick="bookService('Bikini Line Waxing - $25')">Book Now</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <div class="service-card">
+        <img src="images/brazilian.jpg" alt="Brazilian Waxing" />
+        <h3>Brazilian Waxing - $60</h3>
+        <p>Complete hair removal from the bikini area, including around the back.</p>
+        <button onclick="bookService('Brazilian Waxing - $60')">Book Now</button>
+      </div>
+    </div>
+    <div class="mySlides">
+      <div class="service-card">
+        <img src="images/bikiniFull.jpg" alt="Full Bikini Waxing" />
+        <h3>Full Bikini Waxing - $40</h3>
+        <p>Full removal of hair from the bikini area, leaving a clean finish.</p>
+        <button onclick="bookService('Full Bikini Waxing - $40')">Book Now</button>
+      </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1, 'bikiniSlideshow')">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 'bikiniSlideshow')">&#10095;</a>
+  </div>
+</div>
+
+    <div class="glow-box slide-group">
+      <h3>Full Body Waxing</h3>
+      <div class="service-card">
+        <img src="images/fullbody.jpg" alt="Full Body Waxing" />
+        <h3>Full Body Waxing - $120</h3>
+        <p>Complete hair removal from various areas of the body for an ultra-smooth finish.</p>
+        <button onclick="bookService('Full Body Waxing - $120')">Book Now</button>
+      </div>
+    </div>
+
+    <div class="glow-box slide-group">
+      <h3>Brazilian & Buttocks Waxing</h3>
+      <div class="service-card">
+        <img src="images/brazilianbuttocks.jpg" alt="Brazilian & Buttocks Waxing" />
+        <h3>Brazilian & Buttocks - $90</h3>
+        <p>Complete hair removal from the pubic area and buttocks for a smooth, confident finish.</p>
+        <button onclick="bookService('Brazilian & Buttocks - $90')">Book Now</button>
+      </div>
+    </div>
+
+    <div class="glow-box slide-group">
+      <h3>Back, Neck, Shoulders & Chest</h3>
+      <div class="service-card">
+        <img src="images/backneck.jpg" alt="Back, Neck, Shoulders & Chest Waxing" />
+        <h3>Back, Neck, Shoulders & Chest Waxing - $80</h3>
+        <p>Thorough waxing of back, neck, shoulder and chest areas for a polished upper body.</p>
+        <button onclick="bookService('Back, Neck, Shoulders & Chest Waxing - $80')">Book Now</button>
+      </div>
+    </div>
+
+    <div class="glow-box slide-group">
+      <h3>Back Waxing</h3>
+      <div class="service-card">
+        <img src="images/back.jpg" alt="Back Waxing" />
+        <h3>Back Waxing - $50</h3>
+        <p>Full and half back waxing options to help you stay smooth and confident.</p>
+        <button onclick="bookService('Back Waxing - $50')">Book Now</button>
+      </div>
+    </div>
+
+    <div class="glow-box slide-group">
+      <h3>Abdomen Waxing</h3>
+      <div class="service-card">
+        <img src="images/abdomen.jpg" alt="Abdomen Wax" />
+        <h3>Abdomen Wax - $35</h3>
+        <p>Hair removal from sternum to hip bones for a sleek, clean midsection.</p>
+        <button onclick="bookService('Abdomen Wax - $35')">Book Now</button>
+      </div>
+    </div>
+
+    <form id="bookingForm" action="https://formspree.io/f/yourformid" method="POST">
+      <input type="hidden" name="service" id="selectedService" />
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="date" name="date" required />
+      <input type="time" name="time" required step="900" />
+      <button type="submit">Confirm Appointment</button>
+    </form>
+
+    <div id="confirmation" class="confirmation hidden">
+      ✨ Thank you, gorgeous! Your appointment has been booked. ✨  
+    </div>
+
+    <div class="review-section" id="review">
+      <h2>Leave a Review</h2>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="reviewer" placeholder="Your Name" required />
+        <textarea name="review" rows="4" placeholder="Share your Club Wax experience..." required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function bookService(serviceName) {
+      document.getElementById('selectedService').value = serviceName;
+      document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const form = document.getElementById('bookingForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          confirmation.classList.remove('hidden');
+        } else {
+          alert("Oops! Something went wrong.");
+        }
+      });
+    });
+
+    function plusSlides(n, containerId) {
+      const container = document.getElementById(containerId);
+      const slides = container.getElementsByClassName("mySlides");
+      let currentIndex = -1;
+      for (let i = 0; i < slides.length; i++) {
+        if (slides[i].style.display === "block") {
+          currentIndex = i;
+          break;
+        }
+      }
+      slides[currentIndex].style.display = "none";
+      let newIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[newIndex].style.display = "block";
+    }
+
+    const slideGroups = document.querySelectorAll('.slideshow-container');
+    slideGroups.forEach(group => {
+      const slides = group.getElementsByClassName("mySlides");
+      if (slides.length > 0) slides[0].style.display = "block";
+    });
+  </script>
 </body>
 </html>
