@@ -5,97 +5,127 @@
   <title>Club Wax by JEM - Booking</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+    .slide-group {
+      margin-bottom: 40px;
+    }
+    .mySlides {
+      display: none;
+      text-align: center;
+    }
+    .mySlides img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: gold;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .glow-box {
+      border: 2px solid gold;
+      box-shadow: 0 0 20px gold;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .service-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .service-card h3, .service-card p, .tagline, h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Club Wax by JEM</h1>
     <p class="tagline">Glow Up, Glam Up</p>
 
-    <div class="services">
-      <h2>Our Services</h2>
-      <div class="service-card">
-        <img src="images/eyebrow.jpg" alt="Eyebrow Waxing" />
-        <h3>Eyebrow Waxing - $18</h3>
-        <p>Taming and shaping eyebrows for a defined look.</p>
-        <button onclick="bookService('Eyebrow Waxing - $18')">Book Now</button>
+    <h2>Our Services</h2>
+
+    <div class="glow-box slide-group">
+      <h3>Facial Waxing</h3>
+      <div class="slideshow-container" id="facialSlideshow">
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/eyebrow.jpg" alt="Eyebrow Waxing" />
+            <h3>Eyebrow Waxing - $18</h3>
+            <p>Taming and shaping eyebrows for a defined look.</p>
+            <button onclick="bookService('Eyebrow Waxing - $18')">Book Now</button>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/upperlip.jpg" alt="Upper Lip Waxing" />
+            <h3>Upper Lip Waxing - $10</h3>
+            <p>Removes unwanted hair from the upper lip for a clean look.</p>
+            <button onclick="bookService('Upper Lip Waxing - $10')">Book Now</button>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/chin.jpg" alt="Chin Waxing" />
+            <h3>Chin Waxing - $12</h3>
+            <p>Targets hair under and around the chin area.</p>
+            <button onclick="bookService('Chin Waxing - $12')">Book Now</button>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/cheeks.jpg" alt="Cheeks Waxing" />
+            <h3>Cheeks Waxing - $14</h3>
+            <p>Removes peach fuzz and fine hair on the cheeks for smooth skin.</p>
+            <button onclick="bookService('Cheeks Waxing - $14')">Book Now</button>
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'facialSlideshow')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'facialSlideshow')">&#10095;</a>
       </div>
-      <div class="service-card">
-        <img src="images/bikini.jpg" alt="Bikini Wax" />
-        <h3>Bikini Wax - $45</h3>
-        <p>Various options like bikini line, bikini full, and Brazilian waxing.</p>
-        <button onclick="bookService('Bikini Wax - $45')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/underarm.jpg" alt="Underarm Waxing" />
-        <h3>Underarm Waxing - $25</h3>
-        <p>Smooth and hair-free underarms for a more polished look.</p>
-        <button onclick="bookService('Underarm Waxing - $25')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/legs.jpg" alt="Leg Waxing" />
-        <h3>Leg Waxing - $60</h3>
-        <p>Both full and half leg waxing options for smooth, hair-free legs.</p>
-        <button onclick="bookService('Leg Waxing - $60')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/arms.jpg" alt="Arm Waxing" />
-        <h3>Arm Waxing - $35</h3>
-        <p>Full and half arm waxing, including forearms.</p>
-        <button onclick="bookService('Arm Waxing - $35')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/upperlip.jpg" alt="Upper Lip Waxing" />
-        <h3>Upper Lip Waxing - $10</h3>
-        <p>Removes unwanted hair from the upper lip for a clean look.</p>
-        <button onclick="bookService('Upper Lip Waxing - $10')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/chin.jpg" alt="Chin Waxing" />
-        <h3>Chin Waxing - $12</h3>
-        <p>Targets hair under and around the chin area.</p>
-        <button onclick="bookService('Chin Waxing - $12')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/cheeks.jpg" alt="Cheeks Waxing" />
-        <h3>Cheeks Waxing - $14</h3>
-        <p>Removes peach fuzz and fine hair on the cheeks for smooth skin.</p>
-        <button onclick="bookService('Cheeks Waxing - $14')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/fullbody.jpg" alt="Full Body Waxing" />
-        <h3>Full Body Waxing - $120</h3>
-        <p>Complete hair removal from various areas of the body.</p>
-        <button onclick="bookService('Full Body Waxing - $120')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/brazilian.jpg" alt="Brazilian Wax" />
-        <h3>Brazilian Wax - $70</h3>
-        <p>Hair removal from the pubic area, including below and around the back.</p>
-        <button onclick="bookService('Brazilian Wax - $70')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/brazilianbuttocks.jpg" alt="Brazilian & Buttocks Wax" />
-        <h3>Brazilian & Buttocks - $90</h3>
-        <p>Combined waxing of the pubic area and buttocks.</p>
-        <button onclick="bookService('Brazilian & Buttocks - $90')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/backneck.jpg" alt="Back, Neck, Shoulders & Chest Waxing" />
-        <h3>Back, Neck, Shoulders & Chest Waxing - $80</h3>
-        <p>Waxing for a smooth and hair-free look in these areas.</p>
-        <button onclick="bookService('Back, Neck, Shoulders & Chest Waxing - $80')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/back.jpg" alt="Back Wax" />
-        <h3>Back Wax - $50</h3>
-        <p>Both full and half back waxing options.</p>
-        <button onclick="bookService('Back Wax - $50')">Book Now</button>
-      </div>
-      <div class="service-card">
-        <img src="images/abdomen.jpg" alt="Abdomen Wax" />
-        <h3>Abdomen Wax - $35</h3>
-        <p>Waxing from the sternum to the hip bones.</p>
-        <button onclick="bookService('Abdomen Wax - $35')">Book Now</button>
+    </div>
+
+    <div class="glow-box slide-group">
+      <h3>Arm Waxing</h3>
+      <div class="slideshow-container" id="armSlideshow">
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/forearms.jpg" alt="Forearm Waxing" />
+            <h3>Forearm Waxing - $22</h3>
+            <p>Smooths the lower half of the arm from elbow to wrist.</p>
+            <button onclick="bookService('Forearm Waxing - $22')">Book Now</button>
+          </div>
+        </div>
+        <div class="mySlides">
+          <div class="service-card">
+            <img src="images/fullarm.jpg" alt="Full Arm Waxing" />
+            <h3>Full Arm Waxing - $35</h3>
+            <p>Removes hair from the shoulder down to the wrist.</p>
+            <button onclick="bookService('Full Arm Waxing - $35')">Book Now</button>
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'armSlideshow')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'armSlideshow')">&#10095;</a>
       </div>
     </div>
 
@@ -149,7 +179,27 @@
         }
       });
     });
+
+    function plusSlides(n, containerId) {
+      const container = document.getElementById(containerId);
+      const slides = container.getElementsByClassName("mySlides");
+      let currentIndex = -1;
+      for (let i = 0; i < slides.length; i++) {
+        if (slides[i].style.display === "block") {
+          currentIndex = i;
+          break;
+        }
+      }
+      slides[currentIndex].style.display = "none";
+      let newIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[newIndex].style.display = "block";
+    }
+
+    const slideGroups = document.querySelectorAll('.slideshow-container');
+    slideGroups.forEach(group => {
+      const slides = group.getElementsByClassName("mySlides");
+      if (slides.length > 0) slides[0].style.display = "block";
+    });
   </script>
 </body>
 </html>
-
